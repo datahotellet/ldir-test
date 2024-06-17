@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<datasetFields>
+    <fields>
+        <field>
+            <name>Organisasjonsnummer</name>
+            <shortName>orgnr</shortName>
+            <groupable>true</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Navn</name>
+            <shortName>navn</shortName>
+            <groupable>false</groupable>
+            <searchable>true</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Kommunenummer</name>
+            <shortName>kommune</shortName>
+            <groupable>true</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Tilskudd melk</name>
+            <shortName>dt_melk</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Driftstilskudd til melkeproduksjon</content>
+        </field>
+        <field>
+            <name>Tilskudd kjøttfe</name>
+            <shortName>dt_kjottfe</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Driftstilskudd til kjøttfe-produksjon</content>
+        </field>
+        <field>
+            <name>Tilskudd husdyr</name>
+            <shortName>t_husdyr</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til husdyr</content>
+        </field>
+        <field>
+            <name>Tilskudd lammeslakt</name>
+            <shortName>t_lam</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til lammeslakt</content>
+        </field>
+        <field>
+            <name>Tilskudd grøntproduksjon</name>
+            <shortName>t_gront</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Distrikts- og kvalitetstilskudd til grøntproduksjon</content>
+        </field>
+        <field>
+            <name>Tilskudd matpoteter</name>
+            <shortName>t_matpoteter</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Distriktstilskudd for produksjon av matpoteter</content>
+        </field>
+        <field>
+            <name>Tilskudd storferaser</name>
+            <shortName>t_storferaser</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til bevaringsverdige storferaser</content>
+        </field>
+        <field>
+            <name>Tilskudd øko husdyr</name>
+            <shortName>t_oko_husdyr</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til økologisk landbruk - husdyrtilskudd</content>
+        </field>
+        <field>
+            <name>Tilskudd avløsning</name>
+            <shortName>t_avlosning</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til avløsning ved ferie og fritid</content>
+        </field>
+        <field>
+            <name>Bunnfradrag</name>
+            <shortName>bunnfradrag</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Sum tilskudd</name>
+            <shortName>tilskudd</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+    </fields>
+</datasetFields>

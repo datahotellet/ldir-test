@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<datasetFields>
+    <fields>
+        <field>
+            <name>Organisasjonsnummer</name>
+            <shortName>orgnr</shortName>
+            <groupable>true</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Navn</name>
+            <shortName>navn</shortName>
+            <groupable>false</groupable>
+            <searchable>true</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Kommunenummer</name>
+            <shortName>kommune</shortName>
+            <groupable>true</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Tilskudd melk</name>
+            <shortName>dt_melk</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Driftstilskudd til melkeproduksjon</content>
+        </field>
+        <field>
+            <name>Tilskudd kjøttfe</name>
+            <shortName>dt_kjottfe</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Driftstilskudd til kjøttfe-produksjon</content>
+        </field>
+        <field>
+            <name>Tilskudd husdyr</name>
+            <shortName>t_husdyr</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til husdyr</content>
+        </field>
+        <field>
+            <name>Tilskudd beite</name>
+            <shortName>t_beite</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Beite-tilskudd</content>
+        </field>
+        <field>
+            <name>Tilskudd utmarksbeite</name>
+            <shortName>t_utmarksbeite</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til dyr på utmarks-beite</content>
+        </field>
+        <field>
+            <name>Tilskudd areal</name>
+            <shortName>t_areal</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Areal-tilskudd</content>
+        </field>
+        <field>
+            <name>Tilskudd kultur-landskap</name>
+            <shortName>t_klandskap</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Kulturlandskaps-tilskudd</content>
+        </field>
+        <field>
+            <name>Tilskudd økologisk omlegging</name>
+            <shortName>t_oko_omlegging</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til økologisk landbruk - omleggingstilskudd</content>
+        </field>
+        <field>
+            <name>Tilskudd økologisk areal</name>
+            <shortName>t_oko_areal</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til økologisk landbruk - arealtilskudd</content>
+        </field>
+        <field>
+            <name>Tilskudd økologisk husdyr</name>
+            <shortName>t_oko_husdyr</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Tilskudd til økologisk landbruk - husdyrtilskudd</content>
+        </field>
+        <field>
+            <name>Bunn-fradrag</name>
+            <shortName>bunnfradrag</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Sum tilskudd</name>
+            <shortName>tilskudd</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+    </fields>
+</datasetFields>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<datasetFields>
+  <fields>
+    <field>
+      <name>Org.nummer beitelag</name>
+      <shortName>bel_lagnr</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Beitelagets organisasjonsnummer</content>
+    </field>
+    <field>
+      <name>Navn</name>
+      <shortName>navn</shortName>
+      <groupable>true</groupable>
+      <searchable>true</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Beitelagets navn</content>
+    </field>
+    <field>
+      <name>Beiteår</name>
+      <shortName>beiteaar</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Hvilken beitesesong statistikken gjelder for</content>
+    </field>
+    <field>
+      <name>Beitekommune</name>
+      <shortName>beitekommune</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Kommunen hvor størsteparten av beitingen foregikk</content>
+    </field>
+    <field>
+      <name>Beiteslipp (dato)</name>
+      <shortName>beiteslipp</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Dato for beiteslipp</content>
+    </field>
+    <field>
+      <name>Hovedsanking (dato)</name>
+      <shortName>hovedsanking</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Dato for hovedsanking</content>
+    </field>
+    <field>
+      <name>Sau+lam sluppet</name>
+      <shortName>sau_lam_sluppet</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Totalt antall sauer og lam sluppet på beite</content>
+    </field>
+    <field>
+      <name>Sau+lam tapt</name>
+      <shortName>sau_lam_tapt</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Totalt antall sauer og lam tapt på beite</content>
+    </field>
+    <field>
+      <name>Geit sluppet</name>
+      <shortName>geit_sluppet</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Totalt antall geiter sluppet på beite</content>
+    </field>
+    <field>
+      <name>Geit tapt</name>
+      <shortName>geit_tapt</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Totalt antall geiter tapt på beite</content>
+    </field>
+    <field>
+      <name>Storfe sluppet</name>
+      <shortName>storfe_sluppet</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Totalt antall storfe sluppet på beite</content>
+    </field>
+    <field>
+      <name>Storfe tapt</name>
+      <shortName>storfe_tapt</shortName>
+      <groupable>true</groupable>
+      <searchable>false</searchable>
+      <indexPrimaryKey>false</indexPrimaryKey>
+      <content>Totalt antall storfe tapt på beite</content>
+    </field>
+  </fields>
+</datasetFields>

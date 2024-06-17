@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<datasetFields xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<fields>
+		<field>
+			<name>Søknadsår</name>
+			<shortName>soeknads_aar</shortName>
+			<groupable>true</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Søknadsår</content>
+		</field>
+		<field>
+			<name>Saksbehandlende kommune</name>
+			<shortName>saksbehandlende_kommune</shortName>
+			<groupable>true</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Kommune som behandler søknaden</content>
+		</field>
+		<field>
+			<name>Orgnr</name>
+			<shortName>orgnr</shortName>
+			<groupable>true</groupable>
+			<searchable>true</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Søkers organisasjonsnummer for foretak eller bedrift</content>
+		</field>
+		<field>
+			<name>Orgnavn</name>
+			<shortName>orgnavn</shortName>
+			<groupable>false</groupable>
+			<searchable>true</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Navn på foretak eller bedrift</content>
+		</field>
+		<field>
+			<name>Kommunenr</name>
+			<shortName>kommunenr</shortName>
+			<groupable>true</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Kommune hvor søkers driftssenter ligger</content>
+		</field>
+		<field>
+			<name>Gårdsnummer</name>
+			<shortName>gaardsnummer</shortName>
+			<groupable>true</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Gardsnummer for landbrukseiendommen hvor søkers driftssenter ligger</content>
+		</field>
+		<field>
+			<name>Bruksnummer</name>
+			<shortName>bruksnummer</shortName>
+			<groupable>true</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Bruksnummer for landbrukseiendommen hvor søkers driftssenter ligger</content>
+		</field>
+		<field>
+			<name>Festenummer</name>
+			<shortName>festenummer</shortName>
+			<groupable>true</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Festenummer for landbrukseiendommen hvor søkers driftssenter ligger</content>
+		</field>
+		<field>
+			<name>P115 vår</name>
+			<shortName>p115_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Hester, under 3 år</content>
+		</field>
+		<field>
+			<name>P116 vår</name>
+			<shortName>p116_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Hester, 3 år og eldre</content>
+		</field>
+		<field>
+			<name>P118 vår</name>
+			<shortName>p118_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Herav (av P121) kyr av minst 50 % av spesifiserte raser</content>
+		</field>
+		<field>
+			<name>P119 vår</name>
+			<shortName>p119_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Øvrig storfe</content>
+		</field>
+		<field>
+			<name>P120 vår</name>
+			<shortName>p120_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Melkekyr</content>
+		</field>
+		<field>
+			<name>P121 vår</name>
+			<shortName>p121_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Ammekyr</content>
+		</field>
+		<field>
+			<name>P139 vår</name>
+			<shortName>p139_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Melkesau, født i fjor eller tidligere</content>
+		</field>
+		<field>
+			<name>P140 vår</name>
+			<shortName>p140_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Melkegeiter</content>
+		</field>
+		<field>
+			<name>P142 vår</name>
+			<shortName>p142_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Ammegeiter</content>
+		</field>
+		<field>
+			<name>P144 vår</name>
+			<shortName>p144_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Bukker og ungdyr, medregnet kje</content>
+		</field>
+		<field>
+			<name>P145 vår</name>
+			<shortName>p145_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Søyer, født i fjor eller tidligere.</content>
+		</field>
+		<field>
+			<name>P146 vår</name>
+			<shortName>p146_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Værer, født i fjor eller tidligere</content>
+		</field>
+		<field>
+			<name>P154 vår</name>
+			<shortName>p154_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Smågriser, levendevekt under 20 kg eller alder inntil 8 uker</content>
+		</field>
+		<field>
+			<name>P155 vår</name>
+			<shortName>p155_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Avlspurker som har fått minst ett kull</content>
+		</field>
+		<field>
+			<name>P156 vår</name>
+			<shortName>p156_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Råner som er satt inn i avl</content>
+		</field>
+		<field>
+			<name>P157 vår</name>
+			<shortName>p157_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Slaktegriser, levendevekt minst 20 kg. Griser påsatt til avlsdyr, levendevekt 20-50 kg</content>
+		</field>
+		<field>
+			<name>P158 vår</name>
+			<shortName>p158_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Ungpurker bestemt for avl, levendevekt minst 50 kg eller eldre enn 15 uker</content>
+		</field>
+		<field>
+			<name>P159 vår</name>
+			<shortName>p159_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Ungråner bestemt for avl, levendevekt minst 50 kg eller eldre enn 15 uker</content>
+		</field>
+		<field>
+			<name>P161 vår</name>
+			<shortName>p161_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Verpehøner for konsumeggproduksjon, 20 uker og eldre</content>
+		</field>
+		<field>
+			<name>P168 vår</name>
+			<shortName>p168_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Avlsdyr av ender, kalkuner og gjess</content>
+		</field>
+		<field>
+			<name>P174 vår</name>
+			<shortName>p174_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Ender, kalkuner og gjess for slakt</content>
+		</field>
+		<field>
+			<name>P175 vår</name>
+			<shortName>p175_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Livkyllinger, påsatt til verpehøns</content>
+		</field>
+		<field>
+			<name>P176 vår</name>
+			<shortName>p176_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Slaktekyllinger</content>
+		</field>
+		<field>
+			<name>P178 vår</name>
+			<shortName>p178_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Hjort, 1 år og eldre</content>
+		</field>
+		<field>
+			<name>P179 vår</name>
+			<shortName>p179_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Hjort, under 1 år</content>
+		</field>
+		<field>
+			<name>P180 vår</name>
+			<shortName>p180_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Kaniner som brukes i kjøtt- eller ullproduksjon</content>
+		</field>
+		<field>
+			<name>P183 vår</name>
+			<shortName>p183_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Struts</content>
+		</field>
+		<field>
+			<name>P192 vår</name>
+			<shortName>p192_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Esel</content>
+		</field>
+		<field>
+			<name>P196 vår</name>
+			<shortName>p196_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Lama</content>
+		</field>
+		<field>
+			<name>P197 vår</name>
+			<shortName>p197_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Alpakka</content>
+		</field>
+		<field>
+			<name>P801 vår</name>
+			<shortName>p801_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Økologiske melkekyr</content>
+		</field>
+		<field>
+			<name>P802 vår</name>
+			<shortName>p802_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Økologiske ammekyr</content>
+		</field>
+		<field>
+			<name>P803 vår</name>
+			<shortName>p803_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Økologiske øvrige storfe</content>
+		</field>
+		<field>
+			<name>P810 vår</name>
+			<shortName>p810_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Økologiske melkegeiter</content>
+		</field>
+		<field>
+			<name>P811 vår</name>
+			<shortName>p811_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Økologiske ammegeiter</content>
+		</field>
+		<field>
+			<name>P821 vår</name>
+			<shortName>p821_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Økologiske sauer født i fjor eller tidligere</content>
+		</field>
+		<field>
+			<name>P830 vår</name>
+			<shortName>p830_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Økologiske avlsgriser</content>
+		</field>
+		<field>
+			<name>P841 vår</name>
+			<shortName>p841_vaar</shortName>
+			<groupable>false</groupable>
+			<searchable>false</searchable>
+			<indexPrimaryKey>false</indexPrimaryKey>
+			<content>Økologiske verpehøner</content>
+		</field>
+	</fields>
+</datasetFields>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<datasetFields>
+    <fields>
+        <field>
+            <name>Kommunenr</name>
+            <shortName>komnr</shortName>
+            <groupable>true</groupable>
+            <searchable>true</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Gardsnummer</name>
+            <shortName>gardsnr</shortName>
+            <groupable>true</groupable>
+            <searchable>true</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Bruksnr</name>
+            <shortName>bruksnr</shortName>
+            <groupable>false</groupable>
+            <searchable>true</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Festenr</name>
+            <shortName>festenr</shortName>
+            <groupable>false</groupable>
+            <searchable>true</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Bruksnavn</name>
+            <shortName>bruksnavn</shortName>
+            <groupable>false</groupable>
+            <searchable>true</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Jordbruksareal</name>
+            <shortName>jordbruksareal</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Skogareal</name>
+            <shortName>skogareal</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Annet areal</name>
+            <shortName>annet_areal</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Fulldyrket</name>
+            <shortName>fulldyrket</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Overflatedyrket</name>
+            <shortName>overflatedyrket</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Innmarksbeite</name>
+            <shortName>innmarksbeite</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+        </field>
+        <field>
+            <name>Kommunenr til tilknyttet landbrukseiendom</name>
+            <shortName>l_komnr</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Kommunenr til tilknyttet landbrukseiendom</content>
+        </field>
+        <field>
+            <name>Gårdsnr til tilknyttet landbrukseiendom</name>
+            <shortName>l_gardsnr</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Gårdsnr til tilknyttet landbrukseiendom</content>
+        </field>
+        <field>
+            <name>Bruksnr til tilknyttet landbrukseiendom</name>
+            <shortName>l_bruksnr</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Bruksnr til tilknyttet landbrukseiendom</content>
+        </field>
+        <field>
+            <name>Festenr til tilknyttet landbrukseiendom</name>
+            <shortName>l_festenr</shortName>
+            <groupable>false</groupable>
+            <searchable>false</searchable>
+            <indexPrimaryKey>false</indexPrimaryKey>
+            <content>Festenr til tilknyttet landbrukseiendom</content>
+        </field>
+    </fields>
+</datasetFields>
