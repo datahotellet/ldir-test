@@ -5,7 +5,9 @@ input_file="$1"
 temp_file="$(mktemp)"
 
 # Maximum size in bytes (500 KB)
-max_size=$((499 * 1024))
+# 500 KB er max-grensa for førehandsvisning i GitHub
+# Sett lavare for å spare plass
+max_size=$((100 * 1024))
 
 # Check if file is already smaller than max_size
 if [ $(stat -f%z "$input_file") -le $max_size ]; then
