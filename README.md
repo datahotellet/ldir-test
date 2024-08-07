@@ -10,6 +10,15 @@ Testar med Landbruksdirektoratet sine datasett
 
 [+] Får historikk på datasett
 
+[+] Kan bruke GitHub sin funksjonalitet
+- - Opprette Issue for spørsmål og tilbakemeldingar
+- - Konsumentar kan setje opp varsling
+- - Konsumentar kan setje opp synkronisering
+
+[+] Gratis. For dette scenariet kan ein bruke GitHub gratis. Datautgjevar kan opprette organisasjon på GitHub om dei ikkje allereie har det, og legge ut data i eit opent repository. I eit scenario med større filer (over 100 MB) vil ein måtte betale for Large File Storage (LFS).
+
+[+] Komprimering. Ser ut til å vere gzip-komprimering under overføring av filer som standard. F.eks. CSV-fil på 750 KB er berre 350 KB overført.
+
 [+] Førehandsvisning er støtta i GitHub i nettlesaren
 
 [-] Førehandsvisning krev tilrettelegging. Kun førehandsvisning på filer som er maks 512 KB. Støtter ikkje alle CSV-variantar (må vere kommaseparert — ikkje semikolon). Må difor lage ei eiga fil for førehandsvisning.
