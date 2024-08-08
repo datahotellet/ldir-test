@@ -1,0 +1,13 @@
+shortname,name,content
+bel_lagnr,Org.nummer beitelag,Beitelagets organisasjonsnummer
+navn,Navn,Beitelagets navn
+beiteaar,Beiteår,Hvilken beitesesong statistikken gjelder for
+beitekommune,Beitekommune,Kommunen hvor størsteparten av beitingen foregikk
+beiteslipp,Beiteslipp (dato),Dato for beiteslipp
+hovedsanking,Hovedsanking (dato),Dato for hovedsanking
+sau_lam_sluppet,Sau+lam sluppet,Totalt antall sauer og lam sluppet på beite
+sau_lam_tapt,Sau+lam tapt,Totalt antall sauer og lam tapt på beite
+geit_sluppet,Geit sluppet,Totalt antall geiter sluppet på beite
+geit_tapt,Geit tapt,Totalt antall geiter tapt på beite
+storfe_sluppet,Storfe sluppet,Totalt antall storfe sluppet på beite
+storfe_tapt,Storfe tapt,Totalt antall storfe tapt på beite
