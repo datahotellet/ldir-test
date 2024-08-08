@@ -30,7 +30,7 @@ Testar med Landbruksdirektoratet sine datasett på [Datahotellet](https://hotell
 
 [-] Egnar seg ikkje for data som blir oppdatert ofte — repo blir fort stort
 
-[-] Svært lite statistikk om tal på nedlastingar tilgjengeleg. Er noko tilgjengeleg under Insights --> Traffic
+[-] Lite statistikk om tal på nedlastingar tilgjengeleg. Er noko tilgjengeleg under Insights --> Traffic
 
 ## Oppsett
 Scriptet pack.sh gjer tilrettelegging av data.
@@ -38,12 +38,19 @@ Scriptet pack.sh gjer tilrettelegging av data.
 1. Kopierer filer frå ldir-katalog og fjerner overflødige filer
 2. Genererer filer for kvart datasett:
   - sample.csv. For førehandsvisning. Konverterer til CSV-format (kommaseparert) som fungerer med førehandsvisning i GitHub
-  - README. Oversikt over filene i datasettet. Tar med tittel og sist-endra-tidspunkt frå meta.xml
+  - fields.csv. Henta frå fields.xml. Tar med felta shortName, name og content
+  - README. Oversikt over filene i datasettet. Tar med tittel og sist-endra-tidspunkt frå meta.xml, samt feltdefinisjonar frå fields.csv
 
 ## Ikkje dekka her
 Har ikkje sett på korleis Large File Storage (LFS) kan fungere.
 
+## Korleis integrere bruk av GitHub i dataeigar sin arbeidsflyt med publisering av data?
+
+TODO: skriv meir her
+
+Dersom ein opprettar nye datasett som ikkje tidlegare har ligge på Datahotellet, bør ein nytte anledninga til å gjere nokre endringar. Treng ikkje ha med meta.xml og fields.xml lenger.
+- dataset.csv : bør gå for eit meir standardisert format (sjå RFC-ar om CSV som format). Datahotellet har brukt slash (\\) som escape-teikn. Bør bruke dobbelt hermeteikn som er meir vanleg i dag.
+
 ## Vidare
-- Korleis integrere bruk av GitHub i dataeigar sin arbeidsflyt med publisering av data?
-- Konvertere fields.xml til høveleg enklare format. Datapackage / frictionless data?
 - Oppskrift for registrering på data.norge.no
+- Skriv om til å generere meta.csv og endre generering av README til å hente frå meta.csv. Formålet er å gjere det lettare å oppdatere datasett ved å sleppe å forhalde seg til XML-formatet.
