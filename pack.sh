@@ -26,41 +26,19 @@ if $ENABLE_COPY_FROM_SOURCE ; then
     # Kort ned filstørrelsen til under 512 KB så førehandsvisning i GitHub fungerer
     find datasets/ -name "sample.csv" -type f -exec sh -c 'bash trim.sh $1' sh {} \;
 
+    # Les ut felta name, shortName og content (om dei eksisterer) frå fields.xml og skriv til CSV
+    find datasets/ -name "fields.xml" -type f -exec sh -c '
+        if grep -q "§" "$1"; then
+            echo "Error: $1 contains the character §. This character is used as a delimiter in the CSV file and must be removed from the XML file."
+            exit 1
+        fi
+        xmlstarlet sel -t -m "//field" -v "shortName" -o "§" -v "name" -o "§" -v "content" -n "$1" > "$(dirname "$1")/fields.csv"
+        # add header to CSV file. Add line at the top with "shortname§name§content"
+        { echo "shortname§name§content"; cat "$(dirname "$1")/fields.csv"; } > temp && mv temp "$(dirname "$1")/fields.csv";
+        # convert CSV file from using § as delimiter to using , as delimiter
+        csvformat -d "§" -D "," -e utf-8 "$(dirname "$1")/fields.csv" > "$(dirname "$1")/fields.csv.tmp" && mv "$(dirname "$1")/fields.csv.tmp" "$(dirname "$1")/fields.csv"
+    ' sh {} \;
 fi
-
-# Eksempel på innhald i fields.xml (kun eit utdrag frå fila, frå begynnelsen):
-# <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-# <datasetFields xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-# 	<fields>
-# 		<field>
-# 			<name>Søknadsår</name>
-# 			<shortName>soeknads_aar</shortName>
-# 			<groupable>true</groupable>
-# 			<searchable>false</searchable>
-# 			<indexPrimaryKey>false</indexPrimaryKey>
-# 			<content>Søknadsår</content>
-# 		</field>
-# 		<field>
-# 			<name>Saksbehandlende kommune</name>
-# 			<shortName>saksbehandlende_kommune</shortName>
-# 			<groupable>true</groupable>
-# 			<searchable>false</searchable>
-# 			<indexPrimaryKey>false</indexPrimaryKey>
-# 			<content>Kommune som behandler søknaden</content>
-# 		</field>
-
-# Les ut felta name, shortName og content (om dei eksisterer) frå fields.xml og skriv til CSV
-find datasets/ -name "fields.xml" -type f -exec sh -c '
-    if grep -q "§" "$1"; then
-        echo "Error: $1 contains the character §. This character is used as a delimiter in the CSV file and must be removed from the XML file."
-        exit 1
-    fi
-    xmlstarlet sel -t -m "//field" -v "shortName" -o "§" -v "name" -o "§" -v "content" -n "$1" > "$(dirname "$1")/fields.csv"
-    # add header to CSV file. Add line at the top with "shortname§name§content"
-    { echo "shortname§name§content"; cat "$(dirname "$1")/fields.csv"; } > temp && mv temp "$(dirname "$1")/fields.csv";
-    # convert CSV file from using § as delimiter to using , as delimiter
-    csvformat -d "§" -D "," -e utf-8 "$(dirname "$1")/fields.csv" > "$(dirname "$1")/fields.csv.tmp" && mv "$(dirname "$1")/fields.csv.tmp" "$(dirname "$1")/fields.csv"
-' sh {} \;
 
 # Generer README.md for alle katalogar med datasett
 # Les meta.xml, hent ut verdien i <updated> og konverter unix timestamp til menneskelesbar verdi
@@ -96,8 +74,18 @@ find datasets/ -type f -name "dataset.csv" | while read dataset; do
             "- [sample.csv](sample.csv) — eksempeldata\n" \
             "- [dataset.csv](dataset.csv) — original datafil\n" \
             "- [meta.xml](meta.xml) — metadata (tittel og sist-oppdatert)\n" \
-            "- [fields.xml](fields.xml) — feltdefinisjonar\n" \
+            "- [fields.xml](fields.xml) — feltdefinisjonar (XML)\n" \
+            "- [fields.csv](fields.csv) — feltdefinisjonar (CSV)\n" \
             > "$dir/README.md"
+
+        # Legg til innholdet av fields.csv som en tabell i README.md
+        if [ -f "$dir/fields.csv" ]; then
+            echo -e "\n## Feltdefinisjonar\nHenta frå fields.csv\n" >> "$dir/README.md"
+            echo -e "| shortname | name | content |\n| --- | --- | --- |" >> "$dir/README.md"
+            tail -n +2 "$dir/fields.csv" | while IFS=',' read -r shortname name content; do
+                echo -e "| $shortname | $name | $content |" >> "$dir/README.md"
+            done
+        fi            
     fi
 done
 
