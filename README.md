@@ -1,8 +1,9 @@
 # Test av GitHub for distribusjon av datasett
 
 Dette er eit repo for å teste å distribuere datasett via GitHub.
+Både for å undersøke generelt kva fordeler og ulemper det er ved å bruke GitHub, og spesifikt for korleis overføre datasett som i dag er distribuert via Datahotellet.
 
-Testar med Landbruksdirektoratet sine datasett
+Testar med Landbruksdirektoratet sine datasett på [Datahotellet](https://hotell.difi.no/).
 
 ## Vurdering av GitHub som datalager
 
@@ -11,9 +12,9 @@ Testar med Landbruksdirektoratet sine datasett
 [+] Får historikk på datasett
 
 [+] Kan bruke GitHub sin funksjonalitet
-- - Opprette Issue for spørsmål og tilbakemeldingar
-- - Konsumentar kan setje opp varsling
-- - Konsumentar kan setje opp synkronisering
+- Opprette Issue for spørsmål og tilbakemeldingar
+- Konsumentar kan setje opp varsling
+- Konsumentar kan setje opp synkronisering
 
 [+] Gratis. For dette scenariet kan ein bruke GitHub gratis. Datautgjevar kan opprette organisasjon på GitHub om dei ikkje allereie har det, og legge ut data i eit opent repository. I eit scenario med større filer (over 100 MB) vil ein måtte betale for Large File Storage (LFS).
 
@@ -21,7 +22,7 @@ Testar med Landbruksdirektoratet sine datasett
 
 [+] Førehandsvisning er støtta i GitHub i nettlesaren
 
-[-] Førehandsvisning krev tilrettelegging. Kun førehandsvisning på filer som er maks 512 KB. Støtter ikkje alle CSV-variantar (må vere kommaseparert — ikkje semikolon). Må difor lage ei eiga fil for førehandsvisning.
+[-] Førehandsvisning krev tilrettelegging. Kun førehandsvisning på filer som er maks 512 KB. Støtter ikkje alle CSV-variantar (må vere kommaseparert — ikkje semikolon). Må difor lage ei eiga fil for førehandsvisning som er kutta ned i størrelse og konvertert til kompatibelt CSV-format.
 
 [-] Ikkje noko API for å gjere søk, filtrering o.l. på data
 
@@ -29,15 +30,18 @@ Testar med Landbruksdirektoratet sine datasett
 
 [-] Egnar seg ikkje for data som blir oppdatert ofte — repo blir fort stort
 
-[-] Svært lite statistikk om tal på nedlastingar tilgjengeleg
+[-] Svært lite statistikk om tal på nedlastingar tilgjengeleg. Er noko tilgjengeleg under Insights --> Traffic
 
 ## Oppsett
 Scriptet pack.sh gjer tilrettelegging av data.
-0. Lastar ned heile "ldir"-katalogen som ligg på Datahotellet
-1. Kopierer filer og fjerner overflødige filer
+0. Forutsetning: har lasta ned heile katalogen "ldir" som ligg på Datahotellet
+1. Kopierer filer frå ldir-katalog og fjerner overflødige filer
 2. Genererer filer for kvart datasett:
-  a) sample.csv. For førehandsvisning
-  b) README. Oversikt over filene i datasettet. Tar med tittel og sist-endra-tidspunkt frå meta.xml
+  - sample.csv. For førehandsvisning. Konverterer til CSV-format (kommaseparert) som fungerer med førehandsvisning i GitHub
+  - README. Oversikt over filene i datasettet. Tar med tittel og sist-endra-tidspunkt frå meta.xml
+
+## Ikkje dekka her
+Har ikkje sett på korleis Large File Storage (LFS) kan fungere.
 
 ## Vidare
 - Korleis integrere bruk av GitHub i dataeigar sin arbeidsflyt med publisering av data?
