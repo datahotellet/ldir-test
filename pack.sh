@@ -89,6 +89,13 @@ find datasets/ -type f -name "dataset.csv" | while read dataset; do
     fi
 done
 
+# Lag liste over datasett (alle underkatalogar som inneheld fil ved namn dataset.csv)
+> datasets.txt # Truncate datasets.txt to ensure results from previous runs don't persist
+find datasets -type f -name "dataset.csv" | while read dataset; do
+    dir=$(dirname "$dataset")
+    echo "$dir" >> datasets.txt
+done
+
 # Skriv ut liste over 10 største CSV-filer i datasets-katalogen, med både filnamn og menneskelesbar filstørrelse
 # echo "\nStørste filer"
 # find datasets/ -name "*.csv" -type f -exec du -sh {} \; | sort -rh # | head -n 10

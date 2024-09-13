@@ -32,6 +32,56 @@ Testar med Landbruksdirektoratet sine datasett på [Datahotellet](https://hotell
 
 [-] Lite statistikk om tal på nedlastingar tilgjengeleg. Er noko tilgjengeleg under Insights --> Traffic
 
+[-] Noko vanskelegare å fjerne data heilt frå historikken. Krev omskriving av historikken i Git-kodelageret. Finst verktøy som hjelper ein med dette.
+
+## Endre CSV-format
+
+Vi anbefaler å endre CSV-format ved overgang frå Datahotellet. Dette for å gjere CSV-filene enklare å konsumere, enten det er ved å programmere eller ved å opne i rekneark-programvare som Excel.
+
+Oppsummert anbefaling: endre til UTF8 med BOM og bruk dobbelt hermeteikn som escape-teikn.
+
+### UTF8 og BOM
+UTF8 er teiknsettet brukt som gjer det mogeleg å ha med æøå. UTF8 kjem enten med eller utan Byte Order Mark (BOM). BOM består av tre usynlege teikn (bytes) i begynnelsen av fila som gjer det lettare for program å forstå kva teiknsett ei fil er skriven i.
+
+For at æøå skal visast korrekt når ein opner CSV-fila i Excel, må det vere UTF8 _med_ BOM. Ulempa med å ha med BOM er at utviklarar kanskje må ta eit ekstra steg i å fjerne dei usynlege teikna for å prosessere fila korrekt. Dette avheng av kva verktøy og programvarebibliotek utviklaren nyttar. I Datahotellet er datasett lagra utan BOM. I API-et kan ein velje å laste ned datasettet som fil enten med BOM eller UTAN BOM.
+
+#### Anbefaling
+
+Publiser CSV-filer med UTF8 og BOM. Dette for å gjere det enklare for dei som opnar fila i Excel eller liknande, og dermed støtte både utviklarar og ikkje-utviklarar.
+
+#### Legge på BOM
+
+For å legge til BOM i ei CSV-fil, kan ein bruke kommandolinja. Dette kan gjerast ved å skrive tre spesifikke byte i begynnelsen av fila. Dette kan gjerast med `printf` og `cat`-kommandoar i Unix/Linux. Dersom fila allereie er i UTF8, kan ein bruke følgjande kommandoar:
+```
+printf '\xEF\xBB\xBF' > newfile.csv
+cat originalfile.csv >> newfile.csv
+```
+
+### Escape-teikn
+Escape-teikn i CSV-filer er teikn som er brukt for å skilje mellom data og kontrollteikn. Dersom data inneheld eit hermeteikn, må dette skiljast frå hermeteikn som er brukt for å omslutte eit felt. Dette gjer ein ved å bruke eit escape-teikn. Datahotellet har brukt slash (\\) som escape-teikn. Dette er ikkje standard i dag. Standard er å bruke dobbelt hermeteikn (") som escape-teikn. Dette er fordi det er meir vanleg i dag og støttast av fleire verktøy.
+
+Eksempel på bruk av slash som escape-teikn:
+```
+orgnr;foretaksnamn;organisasjonsform
+123456789;"Bedriften \"test\" AS";AS
+```
+
+Eksempel på bruk av dobbelt hermeteikn som escape-teikn:
+```
+orgnr;foretaksnamn;organisasjonsform
+123456789;"Bedriften ""test"" AS";AS
+```
+
+#### Anbefaling
+Publiser CSV-filer med dobbelt hermeteikn som escape-teikn sidan dette er den mest utbredte standarden i dag. Dette gjer det lettare å konsumere dataene både for utviklarar og ikkje-utviklarar.
+
+#### Konvertere CSV-fil
+
+csvformat er eit verktøy som kan konvertere CSV-filer. Dette verktøyet er tilgjengeleg i [csvkit](https://csvkit.readthedocs.io/en/latest/)-pakken. For å konvertere ein CSV-fil frå slash til dobbelt hermeteikn, kan ein bruke følgjande kommando:
+```
+csvformat -d ';' -p '\' -D ';' dataset.csv > fix.csv
+```
+
 ## Oppsett
 Scriptet pack.sh gjer tilrettelegging av data.
 0. Forutsetning: har lasta ned heile katalogen "ldir" som ligg på Datahotellet
