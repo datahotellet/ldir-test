@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Skru av eller på å kopiere frå kjeldekatalog
-ENABLE_COPY_FROM_SOURCE=false
+ENABLE_COPY_FROM_SOURCE=true
 
 # Capture the start time
 start_time=$(date +%s)
@@ -58,18 +58,17 @@ if $ENABLE_COPY_FROM_SOURCE ; then
 
     # Konvertere format på CSV frå Datahotell-format til dobbelt hermeteikn som escape-teikn
     # Først detektere kva escape-teikn som er i bruk i ei fil
-    # find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -p \'\\' "$1" > "$(dirname "$1")/sample.csv"' sh {} \;
-    # find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -p "\\" -e utf-8 -D ";" "$1" > "$1.tmp" && mv "$1.tmp" "$1"' sh {} \;
+    find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -p "\\" -e utf-8 -D ";" "$1" > "$1.tmp" && mv "$1.tmp" "$1"' sh {} \;
 
     # Legg inn UTF8 BOM i alle dataset.csv dersom BOM ikkje allereie er på plass
-    # echo "Adding BOM to dataset.csv files"
-    # find . -name "dataset.csv" -type f -exec sh -c '
-    # if [ "$(xxd -p -l 3 "$1")" != "efbbbf" ]; then
-    #     printf "\xEF\xBB\xBF" | cat - "$1" > temp && mv temp "$1" && echo "Added BOM to $1";
-    # else
-    #     echo "BOM already present in $1";
-    # fi
-    # ' sh {} \;
+    echo "Adding BOM to dataset.csv files"
+    find . -name "dataset.csv" -type f -exec sh -c '
+    if [ "$(xxd -p -l 3 "$1")" != "efbbbf" ]; then
+        printf "\xEF\xBB\xBF" | cat - "$1" > temp && mv temp "$1" && echo "Added BOM to $1";
+    else
+        echo "BOM already present in $1";
+    fi
+    ' sh {} \;
 
     # Les ut felta name, shortName og content (om dei eksisterer) frå fields.xml og skriv til CSV
     echo "Konverterer fields.xml til fields.csv"
