@@ -3,6 +3,9 @@
 # Skru av eller på å kopiere frå kjeldekatalog
 ENABLE_COPY_FROM_SOURCE=false
 
+# Capture the start time
+start_time=$(date +%s)
+
 # Function to find escape character ('\"') in a CSV file
 # will print the line of each occurrence
 # if none found in file, print a message saying so
@@ -46,12 +49,17 @@ if $ENABLE_COPY_FROM_SOURCE ; then
     # Slett overflødige filer
     find datasets/ -type f ! -name "meta.xml" ! -name "fields.xml" ! -name "dataset.csv" -delete
 
+    # Generere eksempel-CSV som blir vist av GitHub
+    # Datahotellet brukar semikolon (;) som kolonne-separator. GitHub støtter kun komma, så det må konverterast mellom ulike CSV-format
+    find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -D "," -e utf-8 "$1" > "$(dirname "$1")/sample.csv"' sh {} \;
+
+    # Kort ned filstørrelsen til under 512 KB så førehandsvisning i GitHub fungerer
+    find datasets/ -name "sample.csv" -type f -exec sh -c 'bash trim.sh $1' sh {} \;
+
     # Konvertere format på CSV frå Datahotell-format til dobbelt hermeteikn som escape-teikn
     # Først detektere kva escape-teikn som er i bruk i ei fil
     # find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -p \'\\' "$1" > "$(dirname "$1")/sample.csv"' sh {} \;
-    find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -p "\" -e utf-8 "$1" > "$1.tmp" ' sh {} \;
-
-    # && mv "$1.tmp" "$1"
+    # find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -p "\\" -e utf-8 -D ";" "$1" > "$1.tmp" && mv "$1.tmp" "$1"' sh {} \;
 
     # Legg inn UTF8 BOM i alle dataset.csv dersom BOM ikkje allereie er på plass
     # echo "Adding BOM to dataset.csv files"
@@ -63,14 +71,8 @@ if $ENABLE_COPY_FROM_SOURCE ; then
     # fi
     # ' sh {} \;
 
-    # Generere eksempel-CSV som blir vist av GitHub
-    # Datahotellet brukar semikolon (;) som kolonne-separator. GitHub støtter kun komma, så det må konverterast mellom ulike CSV-format
-    find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -D "," -e utf-8 "$1" > "$(dirname "$1")/sample.csv"' sh {} \;
-
-    # Kort ned filstørrelsen til under 512 KB så førehandsvisning i GitHub fungerer
-    find datasets/ -name "sample.csv" -type f -exec sh -c 'bash trim.sh $1' sh {} \;
-
     # Les ut felta name, shortName og content (om dei eksisterer) frå fields.xml og skriv til CSV
+    echo "Konverterer fields.xml til fields.csv"
     find datasets/ -name "fields.xml" -type f -exec sh -c '
         if grep -q "§" "$1"; then
             echo "Error: $1 contains the character §. This character is used as a delimiter in the CSV file and must be removed from the XML file."
@@ -86,6 +88,7 @@ fi
 
 # Generer README.md for alle katalogar med datasett
 # Les meta.xml, hent ut verdien i <updated> og konverter unix timestamp til menneskelesbar verdi
+echo "Genererer README.md for alle datasett"
 find datasets/ -type f -name "dataset.csv" | while read dataset; do
     dir=$(dirname "$dataset")
     meta_file="$dir/meta.xml"
@@ -134,6 +137,7 @@ find datasets/ -type f -name "dataset.csv" | while read dataset; do
 done
 
 # Lag liste over datasett (alle underkatalogar som inneheld fil ved namn dataset.csv)
+echo "Lagar liste over datasett --> datasets.txt"
 > datasets.txt # Truncate datasets.txt to ensure results from previous runs don't persist
 find datasets -type f -name "dataset.csv" | while read dataset; do
     dir=$(dirname "$dataset")
@@ -143,3 +147,12 @@ done
 # Skriv ut liste over 10 største CSV-filer i datasets-katalogen, med både filnamn og menneskelesbar filstørrelse
 # echo "\nStørste filer"
 # find datasets/ -name "*.csv" -type f -exec du -sh {} \; | sort -rh # | head -n 10
+
+# Capture the end time
+end_time=$(date +%s)
+
+# Calculate the runtime
+runtime=$((end_time - start_time))
+
+# Print the runtime
+echo "Køyretid script: $runtime sekund"
