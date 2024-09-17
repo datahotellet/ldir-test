@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Skru av eller på å kopiere frå kjeldekatalog
-ENABLE_COPY_FROM_SOURCE=true
+ENABLE_COPY_FROM_SOURCE=false
 
 # Capture the start time
 start_time=$(date +%s)
@@ -53,7 +53,8 @@ if $ENABLE_COPY_FROM_SOURCE ; then
     # Datahotellet brukar semikolon (;) som kolonne-separator. GitHub støtter kun komma, så det må konverterast mellom ulike CSV-format
     find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -D "," -e utf-8 "$1" > "$(dirname "$1")/sample.csv"' sh {} \;
 
-    # Kort ned filstørrelsen til under 512 KB så førehandsvisning i GitHub fungerer
+    # Kort ned filstørrelsen til under 512 KB (GitHub-grense) så førehandsvisning i GitHub fungerer
+    # sjå trim.sh for kva max filstørrelse er sett til
     find datasets/ -name "sample.csv" -type f -exec sh -c 'bash trim.sh $1' sh {} \;
 
     # Konvertere format på CSV frå Datahotell-format til dobbelt hermeteikn som escape-teikn
@@ -131,7 +132,15 @@ find datasets/ -type f -name "dataset.csv" | while read dataset; do
             tail -n +2 "$dir/fields.csv" | while IFS=',' read -r shortname name content; do
                 echo -e "| $shortname | $name | $content |" >> "$dir/README.md"
             done
-        fi            
+        fi     
+
+        # Legg til eksempeldata frå sample.csv som en tabell i README.md
+        # if [ -f "$dir/sample.csv" ]; then
+        #     echo -e "\n## Utdrag av datasettet\nHenta frå sample.csv\n" >> "$dir/README.md"
+        #     head -n 50 "$1" | while IFS="," read -r shortname name content; do
+        #         echo -e "| $shortname | $name | $content |" >> "$dir/README.md"
+        #     done
+        # fi                 
     fi
 done
 
