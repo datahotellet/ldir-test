@@ -26,9 +26,9 @@ find_escape_char() {
     }' "$file"
 }
 
-find_escape_char "datasets/grunneiendommer/dataset.csv" # escape-teikn er \
-find_escape_char "datasets/foretak/dataset.csv" # ingen escape-teikn brukt her
-exit 0
+# find_escape_char "datasets/grunneiendommer/dataset.csv" # escape-teikn er \
+# find_escape_char "datasets/foretak/dataset.csv" # ingen escape-teikn brukt her
+# exit 0
 
 if $ENABLE_COPY_FROM_SOURCE ; then
     # Kor mange MB er kjelde-katalogen på?
@@ -46,6 +46,13 @@ if $ENABLE_COPY_FROM_SOURCE ; then
     # Slett overflødige filer
     find datasets/ -type f ! -name "meta.xml" ! -name "fields.xml" ! -name "dataset.csv" -delete
 
+    # Konvertere format på CSV frå Datahotell-format til dobbelt hermeteikn som escape-teikn
+    # Først detektere kva escape-teikn som er i bruk i ei fil
+    # find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -p \'\\' "$1" > "$(dirname "$1")/sample.csv"' sh {} \;
+    find datasets/ -name "dataset.csv" -type f -exec sh -c 'csvformat -d ";" -p "\" -e utf-8 "$1" > "$1.tmp" ' sh {} \;
+
+    # && mv "$1.tmp" "$1"
+
     # Legg inn UTF8 BOM i alle dataset.csv dersom BOM ikkje allereie er på plass
     # echo "Adding BOM to dataset.csv files"
     # find . -name "dataset.csv" -type f -exec sh -c '
@@ -55,11 +62,6 @@ if $ENABLE_COPY_FROM_SOURCE ; then
     #     echo "BOM already present in $1";
     # fi
     # ' sh {} \;
-
-    # Konvertere format på CSV frå Datahotell-format til dobbelt hermeteikn som escape-teikn
-    # Først detektere kva escape-teikn som er i bruk i ei fil
-
-    
 
     # Generere eksempel-CSV som blir vist av GitHub
     # Datahotellet brukar semikolon (;) som kolonne-separator. GitHub støtter kun komma, så det må konverterast mellom ulike CSV-format
